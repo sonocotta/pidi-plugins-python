@@ -1,18 +1,17 @@
 import setuptools
 
-VERSION = '0.1.2'
-
+VERSION = '1.0.0'
 
 setuptools.setup(
-    name="pidi-display-st7789",
+    name="OrangePi.Pidi.st7789",
     version=VERSION,
-    author="Philip Howard",
-    author_email="phil@pimoroni.com",
-    description="pidi plugin for display output using an ST7789 1.3\" 240x240 SPI LCD.",
+    author='Andriy Malyshenko',
+    author_email='andriy@sonocotta.com',
+    description="pidi plugin for display output using an ST7789 SPI LCD on the OrangePi.",
     long_description=open("README.md").read() + "\n" + open("CHANGELOG.txt").read(),
     long_description_content_type='text/markdown',
     license="MIT",
-    url="https://github.com/pimoroni/pidi-plugins",
+    url="https://github.com/sonocotta/pidi-plugins-python",
     classifiers=[
         "Environment :: X11 Applications",
         "License :: OSI Approved :: MIT License",
@@ -22,7 +21,7 @@ setuptools.setup(
     packages=["pidi_display_st7789"],
     install_requires=[
         "pidi-display-pil>=0.1.0",
-        "st7789",
+        "OrangePi.ST7789",
         "Pillow",
     ],
     entry_points={
