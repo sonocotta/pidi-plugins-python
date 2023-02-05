@@ -136,6 +136,7 @@ class DisplayPIL(Display):
 
         margin = 5
         width = self._width * self._downscale
+        height = self._height * self._downscale
 
         # Artist
         artist = self._artist
@@ -143,16 +144,24 @@ class DisplayPIL(Display):
         if ";" in artist:
             artist = artist.replace(";", ", ")  # Swap out weird semicolons for commas
 
-        box = text_in_rect(self._text_draw, artist, self._font_medium, (margin, 5 * self._downscale, width - margin, 35 * self._downscale))
+        box = text_in_rect(
+            self._text_draw, artist, self._font_medium, (margin, 5 * self._downscale, width - margin, 35 * self._downscale)
+        )
 
         # Album
-        text_in_rect(self._text_draw, self._album, self._font_small, (50 * self._downscale, box[3], width - (50 * self._downscale), 70 * self._downscale))
+        text_in_rect(
+            self._text_draw, self._album, self._font_small, (50 * self._downscale, box[3], width - (50 * self._downscale), 70 * self._downscale)
+        )
 
         # Song title
-        text_in_rect(self._text_draw, self._title, self._font, (margin, 95 * self._downscale, width - margin, 170 * self._downscale))
+        text_in_rect(
+            self._text_draw, self._title, self._font, (margin, 95 * self._downscale, width - margin, 170 * self._downscale)
+        )
 
         # Downscale track information
-        self._text_1x = self._text.resize((int(width / self._downscale), int(width / self._downscale)), resample=Image.LANCZOS)
+        self._text_1x = self._text.resize(
+            (int(width / self._downscale), int(height / self._downscale)), resample=Image.LANCZOS
+        )
 
     def redraw(self):
         margin = 5
