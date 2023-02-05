@@ -2,7 +2,7 @@ import time
 import math
 import os
 
-from mopidy_pidi.plugin import Display
+from mopidy_orangepi_pidi.plugin import Display
 
 __version__ = '1.0.0'
 

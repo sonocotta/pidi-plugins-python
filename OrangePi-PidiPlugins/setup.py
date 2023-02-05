@@ -22,13 +22,14 @@ setup(
     install_requires=[
         "fonts",
         "font_roboto",
+        "Mopidy.OrangePi.Pidi",
         "OrangePi.ST7789",
         "Pillow",
     ],
     entry_points={
         'pidi.plugin.display': [
-            'File = OrangePi.Pidi:DisplayFile',
-            'DisplayST7789 = OrangePi.Pidi:DisplayST7789'
+            'File = OrangePi_PidiPlugins:DisplayFile',
+            'DisplayST7789 = OrangePi_PidiPlugins.DisplayST7789:DisplayST7789'
         ]
     },
     python_requires=">=2.7",
