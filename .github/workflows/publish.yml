@@ -25,7 +25,7 @@ jobs:
         python -m pip install --upgrade setuptools twine
     
     - name: Build package
-      working-directory: pidi-display-st7789
+      working-directory: OrangePi-PidiPlugins
       run: |
         python3 setup.py build
         python3 setup.py sdist
@@ -35,4 +35,4 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         password: ${{ secrets.PYPI_API_TOKEN }}
-        packages_dir: pidi-display-st7789/dist
+        packages_dir: OrangePi-PidiPlugins/dist

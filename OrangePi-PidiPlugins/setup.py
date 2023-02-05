@@ -1,13 +1,13 @@
-import setuptools
+from setuptools import setup, find_packages
 
-VERSION = '1.0.0'
+VERSION = "1.0.0"
 
-setuptools.setup(
-    name="OrangePi.Pidi.st7789",
+setup(
+    name="OrangePi.PidiPlugins",
     version=VERSION,
     author='Andriy Malyshenko',
     author_email='andriy@sonocotta.com',
-    description="pidi plugin for display output using an ST7789 SPI LCD on the OrangePi.",
+    description="Pidi plugins for display output using SPI LCDs on the OrangePi.",
     long_description=open("README.md").read() + "\n" + open("CHANGELOG.txt").read(),
     long_description_content_type='text/markdown',
     license="MIT",
@@ -18,15 +18,17 @@ setuptools.setup(
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 3.6",
     ],
-    packages=["pidi_display_st7789"],
+    packages=find_packages(),
     install_requires=[
-        "pidi-display-pil>=0.1.0",
+        "fonts",
+        "font_roboto",
         "OrangePi.ST7789",
         "Pillow",
     ],
     entry_points={
         'pidi.plugin.display': [
-            'DisplayST7789 = pidi_display_st7789:DisplayST7789'
+            'File = OrangePi.Pidi:DisplayFile',
+            'DisplayST7789 = OrangePi.Pidi:DisplayST7789'
         ]
     },
     python_requires=">=2.7",

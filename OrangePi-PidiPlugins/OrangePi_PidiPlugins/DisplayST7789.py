@@ -1,6 +1,6 @@
 """ST7789 Display plugin for pidi."""
 from OrangePi import ST7789, ST7789_DISPOFF, ST7789_DISPON
-from pidi_display_pil import DisplayPIL
+from OrangePi_PidiPlugins import DisplayPIL
 
 __version__ = '1.0.0'
 
