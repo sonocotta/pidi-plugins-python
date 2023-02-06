@@ -1,8 +1,8 @@
 """ILI9341 Display plugin for pidi."""
-from OrangePi import ILI9341, ILI9341_DISPOFF, ILI9341_DISPON
+from OrangePi_ILI9341 import ILI9341, ILI9341_DISPOFF, ILI9341_DISPON
 from OrangePi_PidiPlugins import DisplayPIL
 
-__version__ = '1.0.2'
+__version__ = '1.1.0'
 
 class DisplayILI9341(DisplayPIL):
     """pidi display output plugin for the ILI9341 SPI LCD"""
