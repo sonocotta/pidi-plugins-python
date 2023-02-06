@@ -30,8 +30,8 @@ setup(
     entry_points={
         'pidi.plugin.display': [
             'File = OrangePi_PidiPlugins:DisplayFile',
-            'DisplayST7789 = OrangePi_PidiPlugins.DisplayST7789:DisplayST7789'
-            'DisplayILI9341 = OrangePi_PidiPlugins.DisplayILI9341:DisplayILI9341'
+            'DisplayST7789 = OrangePi_PidiPlugins.DisplayST7789:DisplayST7789',
+            'DisplayILI9341 = OrangePi_PidiPlugins.DisplayILI9341:DisplayILI9341',
         ]
     },
     python_requires=">=2.7",
