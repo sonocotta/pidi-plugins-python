@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 
 setup(
     name="OrangePi.PidiPlugins",
@@ -24,7 +24,7 @@ setup(
         "font_roboto",
         "Mopidy.OrangePi.Pidi",
         "OrangePi.ST7789>=1.1.0",
-        "OrangePi.ILI9341>=1.1.0",
+        "OrangePi.ILI9341>=1.1.1",
         "Pillow",
     ],
     entry_points={
