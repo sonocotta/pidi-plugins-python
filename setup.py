@@ -23,7 +23,7 @@ setup(
         "fonts",
         "font_roboto",
         "Mopidy.OrangePi.Pidi",
-        "OrangePi.ST7789>=1.1.0",
+        "OrangePi.ST7789>=1.1.1",
         "OrangePi.ILI9341>=1.1.1",
         "Pillow",
     ],
