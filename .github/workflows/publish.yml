@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Set up Python ${{ matrix.python }}
       uses: actions/setup-python@v2
       with:
@@ -25,14 +25,15 @@ jobs:
         python -m pip install --upgrade setuptools twine
     
     - name: Build package
-      working-directory: OrangePi-PidiPlugins
+      working-directory: .
       run: |
         python3 setup.py build
         python3 setup.py sdist
-
     - name: Publish package to PyPI
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master')
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
+        skip-existing: true
+        print-hash: true
         password: ${{ secrets.PYPI_API_TOKEN }}
-        packages_dir: OrangePi-PidiPlugins/dist
+        packages-dir: ./dist
